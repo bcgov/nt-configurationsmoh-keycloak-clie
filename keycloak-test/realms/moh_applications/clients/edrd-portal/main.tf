@@ -110,6 +110,8 @@ resource "keycloak_openid_client_default_scopes" "client_default_scopes" {
   realm_id  = keycloak_openid_client.CLIENT.realm_id
   client_id = keycloak_openid_client.CLIENT.id
   default_scopes = [
-    "bcprovider_aad"
+    "bcprovider_aad",
+    "profile",
+    "email"
   ]
 }

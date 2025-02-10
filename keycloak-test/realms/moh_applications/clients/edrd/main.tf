@@ -71,6 +71,8 @@ resource "keycloak_openid_client_default_scopes" "client_default_scopes" {
   client_id = keycloak_openid_client.CLIENT.id
   default_scopes = [
     "idir_aad",
-    "phsa"
+    "phsa",
+    "profile",
+    "email"
   ]
 }

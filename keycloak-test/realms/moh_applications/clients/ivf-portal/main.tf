@@ -33,7 +33,7 @@ resource "keycloak_openid_client" "CLIENT" {
 resource "keycloak_openid_user_client_role_protocol_mapper" "Client-Role-Mapper-IVF" {
   realm_id                    = keycloak_openid_client.CLIENT.realm_id
   client_id                   = keycloak_openid_client.CLIENT.id
-  client_id_for_role_mappings = "IVF"
+  client_id_for_role_mappings = "IVF-PORTAL"
   name                        = "Client Role Mapper for IVF"
   claim_name                  = "roles"
   multivalued                 = true
@@ -76,6 +76,8 @@ resource "keycloak_openid_client_default_scopes" "client_default_scopes" {
   client_id = keycloak_openid_client.CLIENT.id
   default_scopes = [
     "bcprovider_aad",
-    "idir_aad"
+    "idir_aad",
+    "profile",
+    "email"
   ]
 }
